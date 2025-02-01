@@ -4,7 +4,6 @@ from werkzeug.utils import secure_filename
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
-
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
@@ -17,7 +16,7 @@ def allowed_file(filename):
 
 def preprocess_image(img_path):
     # Resize and preprocess the image to match model input
-    img = image.load_img(img_path, target_size=(224, 224))  # Adjust size to your model's input
+    img = image.load_img(img_path, target_size=(150, 150), color_mode='grayscale')  # Adjust size to your model's input
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
     img_array /= 255.0  # Normalize (if your model expects [0,1])

@@ -6,13 +6,33 @@
 <body>
     <h1>Upload Chest X-Ray for Pneumonia Detection</h1>
     <form method="POST" action="/predict" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*" required>
+        <input type="file" name="file" id = 'files' accept="image/*" required>
         <button type="submit">Predict</button>
     </form>
+    <output id="list"></output>
+
 
     {% if result %}
         <h2>Result: {{ result }} (Probability: {{ "%.2f"|format(probability * 100) }}%)</h2>
         <img src="{{ img_path }}" width="300" alt="Uploaded Image">
     {% endif %}
 </body>
+<script>
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    function handleFileSelect(evt) { 
+	var files = evt.target.files; 
+	var f = files[0]; 
+	var reader = new FileReader();
+	reader.onload = (
+		function(theFile) { 
+			return function(e) { 
+				document.getElementById('list').innerHTML = [
+					'<img src="', e.target.result,'" title="', theFile.name, '" width="100" />'
+					].join(""); 
+			}; 
+		}
+	)(f);
+	reader.readAsDataURL(f); 
+}
+</script>
 </html>
