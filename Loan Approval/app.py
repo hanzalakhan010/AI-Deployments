@@ -1,4 +1,19 @@
 from joblib import load
-from flask import Flask
+from flask import Flask,request,render_template
 model = load('./models/model_v1.joblib')
 
+app = Flask(__name__)
+
+
+
+@app.route('/application')
+def application():
+    if request.method == 'POST':
+        ...
+    elif request.method == "GET":
+        return render_template('application.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+    
