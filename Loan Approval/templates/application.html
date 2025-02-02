@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  href = '{{url_for("static",filename= "css/materialize.css")}}' rel="stylesheet">
+    <link  href = '{{url_for("static",filename= "css/styles.css")}}' rel="stylesheet">
     <title>Application Form</title>
 </head>
+
 <body>
-<!-- Input Fields
+    <!-- Input Fields
      ' no_of_dependents', ' education', ' self_employed',
        ' income_annum', ' loan_amount', ' loan_term', ' cibil_score',
        ' residential_assets_value', ' commercial_assets_value',
        ' luxury_assets_value', ' bank_asset_value'
  -->
+    <h1>Application Form</h1>
+    <form >
+        <p class="range-field">
+            <label for ='no_of_dependents'>Number of dependents</label>
+            <input type="range" id="no_of_dependents" min="0" max="15" />
+        </p>
+    </form>
 
 
 </body>
+<script src='{{url_for("static",filename= "js/materialize.js")}}'></script>
+
 </html>
