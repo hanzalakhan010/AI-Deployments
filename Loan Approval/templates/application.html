@@ -18,6 +18,24 @@
     -->
     <h1>Application Form</h1>
     <form>
+        <div>
+            <p class="label">load demo data</p>
+            <select>
+                <option disabled>Select from data catalog</option>
+                <option>Demo 1</option>
+                <option>Demo 2</option>
+                <option>Demo 3</option>
+                <option>Demo 4</option>
+                <option>Demo 5</option>
+                <option>Demo 6</option>
+                <option>Demo 7</option>
+                <option>Demo 8</option>
+                <option>Demo 9</option>
+                <option>Demo 10</option>
+            </select>
+        </div>
+
+        <hr>
         <p class="label">Number of dependents</p>
         <input type="range" id='no_of_dependents' name="no_of_dependents" min="0" max='15'
             oninput="this.nextElementSibling.value = this.value">
@@ -67,7 +85,29 @@
             <p class="label">CIBIL Score</p>
             <input type="number" id='cibil_score' name="cibil_score" min="0">
         </div>
-        
+        <hr>
+        <div>
+            <p class="label">Residential Assets Value($k)</p>
+            <input type="number" id='residential_assets_value' name="residential_assets_value" min="0">
+        </div>
+        <hr>
+        <div>
+            <p class="label">Commercial Assets Value($k)</p>
+            <input type="number" id='commercial_assets_value' name="commercial_assets_value" min="0">
+        </div>
+        <hr>
+        <div>
+            <p class="label">Luxury Assets Value($k)</p>
+            <input type="number" id='luxury_assets_value' name="luxury_assets_value" min="0">
+        </div>
+        <hr>
+        <div>
+            <p class="label">Bank Asset Value($k)</p>
+            <input type="number" id='bank_asset_value' name="bank_asset_value" min="0">
+        </div>
+        <hr>
+        <input type="submit" value="Submit">
+
     </form>
 </body>
 
