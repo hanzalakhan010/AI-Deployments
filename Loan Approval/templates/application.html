@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  href = '{{url_for("static",filename= "css/styles.css")}}' rel="stylesheet">
+    <!-- <link  href = '{{url_for("static",filename= "css/styles.css")}}' rel="stylesheet"> -->
+    <link rel='stylesheet' href="../static/css/styles.css">
     <title>Application Form</title>
 </head>
 
@@ -14,24 +15,60 @@
        ' income_annum', ' loan_amount', ' loan_term', ' cibil_score',
        ' residential_assets_value', ' commercial_assets_value',
        ' luxury_assets_value', ' bank_asset_value'
- -->
+    -->
     <h1>Application Form</h1>
-    <form >
-        <p class="range-field">
-            <label for ='no_of_dependents'>Number of dependents</label>
-            <input type="range" id="no_of_dependents" min="0" max="15" />
-        </p>
-        <div class="input-field col s12">
-            <label>Materialize Select</label>
-            <select>
-              <!-- <option value="" disabled selected>Select your education</option> -->
-              <option value="1">Graduated</option>
-              <option value="2"> Not Graduated</option>
-            </select>
+    <form>
+        <p class="label">Number of dependents</p>
+        <input type="range" id='no_of_dependents' name="no_of_dependents" min="0" max='15'
+            oninput="this.nextElementSibling.value = this.value">
+        <output>8</output>
+        <hr>
+        <div>
+            <p class="label">Education</p>
+            <span class="block">
+                <label for='graduated'>Graduated</label>
+                <input type="radio" id='graduated' value="graduated" name="education">
+            </span>
+            <span class='block'>
+                <label for='ngraduated'>Not Graduated</label>
+                <input type="radio" id="ngraduated" value='ngraduated' name="education">
+            </span>
         </div>
+        <hr>
+        <div>
+            <p class="label">Self Employed</p>
+            <span class="block">
+                <label for='self_employed_yes'>Yes</label>
+                <input type="radio" id='self_employed_yes' value="self_employed_yes" name="self_employed">
+            </span>
+            <span class='block'>
+                <label for='self_employed_no'>No</label>
+                <input type="radio" id="self_employed_no" value='self_employed_no' name="self_employed">
+            </span>
+        </div>
+        <hr>
+        <div>
+            <p class="label">Annual Income($k)</p>
+            <input type="number" id='income_annum' name="income_annum" min="0">
+        </div>
+        <hr>
+        <div>
+            <p class="label">Loan Amount($k)</p>
+            <input type="number" id='loan_amount' name="loan_amount" min="0">
+        </div>
+        <hr>
+
+        <div>
+            <p class="label">Loan Term(months)</p>
+            <input type="number" id='loan_term' name="loan_term" min="0" max="25">
+        </div>
+        <hr>
+        <div>
+            <p class="label">CIBIL Score</p>
+            <input type="number" id='cibil_score' name="cibil_score" min="0">
+        </div>
+        
     </form>
-
-
 </body>
 
 

@@ -2,5 +2,26 @@ h1{
     text-align: center;
 }
 form{
+    border: 1px solid gray;
+    padding: 10px;
     margin: 5%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: larger;
+
+}
+hr{
+    width: 100%;
+    height: .5px solid gray;
+}
+span.block{
+    display: block;
+}
+p.label{
+    background-color: rgb(207, 207, 207);
+    padding: 10px;
+}
+input[type='number']{
+    font-size: large;
 }
