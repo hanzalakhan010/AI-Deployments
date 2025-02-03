@@ -22,10 +22,29 @@
             <label for ='no_of_dependents'>Number of dependents</label>
             <input type="range" id="no_of_dependents" min="0" max="15" />
         </p>
+        <div class="input-field col s12">
+            <label>Materialize Select</label>
+            <select>
+              <!-- <option value="" disabled selected>Select your education</option> -->
+              <option value="1">Graduated</option>
+              <option value="2"> Not Graduated</option>
+            </select>
+        </div>
     </form>
 
 
 </body>
-<script src='{{url_for("static",filename= "js/materialize.js")}}'></script>
+<script src='{{url_for("static",filename= "js/materialize.js")}}'>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+//   $(document).ready(function(){
+//     $('select').formSelect();
+//   });
+</script>
 
 </html>
