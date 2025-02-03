@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  href = '{{url_for("static",filename= "css/materialize.css")}}' rel="stylesheet">
     <link  href = '{{url_for("static",filename= "css/styles.css")}}' rel="stylesheet">
     <title>Application Form</title>
 </head>
@@ -34,17 +33,6 @@
 
 
 </body>
-<script src='{{url_for("static",filename= "js/materialize.js")}}'>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
 
-  // Or with jQuery
-
-//   $(document).ready(function(){
-//     $('select').formSelect();
-//   });
-</script>
 
 </html>
