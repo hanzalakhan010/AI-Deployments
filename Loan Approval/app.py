@@ -9,7 +9,8 @@ app = Flask(__name__)
 @app.route('/application')
 def application():
     if request.method == 'POST':
-        ...
+        data = request.form
+        print(data)
     elif request.method == "GET":
         return render_template('application.html')
 

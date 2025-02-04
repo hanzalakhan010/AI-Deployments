@@ -22,6 +22,26 @@ p.label{
     background-color: rgb(207, 207, 207);
     padding: 10px;
 }
+
+input[type="submit"]{
+    padding:6px;
+    font-size: larger;
+    border: none;
+    border-radius: 10px;
+    background-color: gray;
+}
+input[type='submit']:hover{
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
+}
 input[type='number']{
     font-size: large;
+}
+
+
+@media only screen and (min-width:600px){
+    form{
+        margin-right: 20%;
+        margin-left: 20%;
+    }
 }
