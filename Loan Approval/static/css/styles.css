@@ -1,3 +1,6 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
 h1{
     text-align: center;
 }
@@ -37,8 +40,31 @@ input[type='submit']:hover{
 input[type='number']{
     font-size: large;
 }
+p.Approved ,p.Rejected{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: larger;
+    /* margin: 10px; */
 
+}
+p.Approved{
+    background-color: rgb(190, 255, 93);
+}
+p.Rejected{
+    background-color: rgb(255, 193, 193);
+}
+#predictionDiv{
+    padding: 10px;
+}
 
+span.heading{
+    font-size: medium;
+    /* background-color: rgb(196, 196, 161); */
+    /* padding: 5px; */
+    font-weight: bold;
+    margin:5px
+    
+}
 @media only screen and (min-width:700px){
     form{
         margin-right: 20%;

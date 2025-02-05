@@ -1,6 +1,7 @@
 from joblib import load
 model = load('./models/model_v1.joblib')
 import numpy as np
+from json import loads
 import shap
 import pandas as pd
 
@@ -19,10 +20,25 @@ def prediction(data):
             True if data.get('education') == 'ngraduated' else False
         ]
     X = np.array(X).reshape(1,-1)
+    probab = model.predict_proba(X)
     prediction = model.predict(X)[0].strip()
-    reasons = rejectionReasons(X)
-    return prediction
+    # print(probab)
+    if prediction =='Rejected':
+        explanations = rejectionReasons(X)
+        probability = probab[0][1]*100
+        return {"prediction":prediction,"probab":probability,"explanations":explanations}
+    else:
+        probability = probab[0][0]*100
+        return {"prediction":prediction,"probab":probability}
     
+def rejectionExplainer(reasons):
+    explanations = []
+    with open('explanations.json') as explanationsFile:
+        explanations_dict = loads(explanationsFile.read()).get('explanations')
+        for reason in reasons:
+            # print(reason)
+            explanations.append({"reason":reason,**explanations_dict.get(reason)})
+    return explanations
 def rejectionReasons(applicant_data):
     explainer = shap.TreeExplainer(model)
     shap_single = explainer.shap_values(applicant_data)
@@ -36,9 +52,13 @@ def rejectionReasons(applicant_data):
             "shap_effect":shap_single[0]
         }
     ) 
-    rejection_reasons = shap_df.sort_values(by="shap_effect").head(10)
+    rejection_reasons = shap_df.sort_values(by="shap_effect").head(3)
     reasons = []
     for idx, row in rejection_reasons.iterrows():
-        reasons.append(f"{row['feature']}: {row['shap_effect']:.2f}")
-    print(reasons)
+        reasons.append(row['feature'])
+    # for idx, row in rejection_reasons.iterrows():
+    #     reasons.append(f"{row['feature']}: {row['shap_effect']:.2f}")
+    # print(reasons)
+    explaination = rejectionExplainer(reasons=list(reasons))
+    return explaination
 

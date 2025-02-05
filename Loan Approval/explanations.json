@@ -1,0 +1,89 @@
+{
+    "explanations": {
+        " no_of_dependents": {
+            "What it means": "The number of people financially dependent on you (e.g., children, elderly parents).",
+            "Why it matters": "More dependents → Higher living expenses → Less income available for loan repayments.",
+            "What you can do": [
+                "Add a co-signer with stable income to share repayment responsibility.",
+                "Show additional income sources (e.g., spouse’s salary, rental income)."
+            ]
+        },
+        " education": {
+            "What it means": "Wheather you are graduated",
+            "Why it matters": "Some lenders associate higher education with stable careers and repayment capacity.",
+            "What you can do": [
+                "Highlight work experience if education is lower (e.g., '10+ years in the same job').",
+                "Submit certifications/skills (e.g., coding courses, trade licenses)."
+            ]
+        },
+        " self_employed": {
+            "What it means": "Whether you work for yourself (e.g., freelancer, business owner).",
+            "Why it matters": "Self-employed income can be irregular, raising concerns about repayment consistency.",
+            "What you can do": [
+                "Provide 2+ years of tax returns to prove stable earnings.",
+                "Show business contracts (e.g., long-term clients)."
+            ]
+        },
+        " income_annum": {
+            "What it means": "Your total yearly income from all sources.",
+            "Why it matters": "Low income → Higher risk of missing repayments for the loan amount requested.",
+            "What you can do": [
+                "Request a smaller loan amount.",
+                "Add a co-signer (e.g., family member with steady income)."
+            ]
+        },
+        " loan_amount": {
+            "What it means": "The amount of money you’re asking to borrow.",
+            "Why it matters": "A very high loan amount relative to income/assets → Higher risk of default.",
+            "What you can do": [
+                "Reduce the loan amount to match your income.",
+                "Extend the loan term to lower monthly payments."
+            ]
+        },
+        " loan_term": {
+            "What it means": "The duration (in months/years) to repay the loan.",
+            "Why it matters": "Shorter terms → Higher monthly payments → Risk of missed payments.",
+            "What you can do": [
+                "Choose a longer repayment period (e.g., 5 years instead of 3)."
+            ]
+        },
+        " cibil_score": {
+            "What it means": "Your credit score (CIBIL in India), reflecting your creditworthiness (300–900).",
+            "Why it matters": "Scores below 650 → History of late payments or defaults → Higher risk for lenders.",
+            "What you can do": [
+                "Pay bills on time for 6–12 months to boost your score.",
+                "Check for errors in your credit report and dispute inaccuracies."
+            ]
+        },
+        " residential_assets_value": {
+            "What it means": "Total value of property you own (e.g., home, land).",
+            "Why it matters": "Higher value → Can be used as collateral → Lower risk for lenders.",
+            "What you can do": [
+                "Pledge property as collateral to secure the loan."
+            ]
+        },
+        " commercial_assets_value": {
+            "What it means": "Value of business-related assets (e.g., office space, equipment).",
+            "Why it matters": "Shows financial stability for self-employed applicants.",
+            "What you can do": [
+                "Provide business asset documents (e.g., property deeds, machinery invoices)."
+            ]
+        },
+        " luxury_assets_value": {
+            "What it means": "Value of luxury items (e.g., cars, jewelry).",
+            "Why it matters": "High luxury assets + low income → Suspected financial mismanagement.",
+            "What you can do": [
+                "Explain the source (e.g., inheritance, gifts).",
+                "Focus on income/savings instead of luxury assets."
+            ]
+        },
+        " bank_asset_value": {
+            "What it means": "Value of savings, investments, or deposits in your bank accounts.",
+            "Why it matters": "Higher savings → Safety net for repayments during emergencies.",
+            "What you can do": [
+                "Increase savings to 3–6 months of income.",
+                "Show fixed deposits (FDs) as proof of financial stability."
+            ]
+        }
+    }
+}

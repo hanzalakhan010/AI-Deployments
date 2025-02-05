@@ -17,12 +17,12 @@ def application():
 
         data = request.form
 
-        result = predictor.prediction(data=data)  
-        # explanations = predictor.rejectionReasons(data = data)
-        
-        return render_template('application-result.html',
-                    prediction = result,
+        prediction = predictor.prediction(data)
 
+        return render_template('application-result.html',
+                    prediction = prediction.get("prediction"),
+                    probab = prediction.get("probab"),
+                    explanations = prediction.get('explanations')
                 )
     elif request.method == "GET":
         return render_template('application.html')
