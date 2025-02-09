@@ -7,6 +7,13 @@
 </head>
 <body>
     <div>
+        <h1>Problem Statement</h1>
+        <p>Determine what factors affect the most of loan Approval</p>
+        <div>
+            <h2>Feature Importances</h2>
+            <iframe src='{{url_for("static",filename= "feature_importances.html")}}' style="width: 90%;height: 90vh;"></iframe>
+            <p>Cibil score is clearly the most important feature for loan Approval</p>
+        </div>
         <iframe src='{{url_for("static",filename= "grouped_no_of_dependents.html")}}' style="width: 90%;height: 90vh;"></iframe>
         <iframe src='{{url_for("static",filename= "grouped_self_employed.html")}}' style="width: 90%;height: 90vh;"></iframe>
     </div>

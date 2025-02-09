@@ -1,8 +1,9 @@
-function loadDemoData(demo_no) {
+function loadDemoData() {
     fetch('../static/js/demo.json')
         .then(res => res.json())
         .then(data => {
             // console.table(data.demos[demo_no])
+            let demo_no =document.getElementById('select').value
             let selected = data.demos[demo_no]
             document.getElementById('no_of_dependents').value = selected[' no_of_dependents']
             document.getElementById('no_of_dependents_o').value = selected[' no_of_dependents']

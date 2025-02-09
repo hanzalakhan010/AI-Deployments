@@ -13,8 +13,8 @@
         <p class="{{prediction}}"><span class="heading">Status </span>: {{prediction}}</p>
         <p><span class="heading">Probability</span> : {{probab}}</p>
         <div>
-            <h3>Key areas for improvement</h3>
             {%if explanations%}
+            <h3>Key areas for improvement</h3>
             <hr>
             <ul>
                 {%for explanation in explanations%}
