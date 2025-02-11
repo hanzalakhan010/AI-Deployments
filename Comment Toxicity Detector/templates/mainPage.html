@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Toxicity Detector</title>
+</head>
+<script>
+    function sendComment() {
+        let comment = document.getElementById('comment').value
+        fetch('/detect', {
+            headers: {
+                comment
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data) {
+                    console.log(data)
+                }
+            })
+    }
+
+</script>
+
+<body>
+    <input id='comment' placeholder="Comment">
+    <button onclick="sendComment()">Detect</button>
+</body>
+
+</html>
