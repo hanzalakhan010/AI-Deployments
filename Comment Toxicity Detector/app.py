@@ -1,31 +1,24 @@
-# from flask import Flask,request,render_template
-from joblib import load
-# from tensorflow.keras.models import load_model
+from flask import Flask,request,render_template
+from tensorflow.keras.models import load_model
+from myutils import vectorizer,processPrediction
 
-# from pathlib import Path
-
-# print(Path('./models/model.joblib').is_file())
+app = Flask(__name__)
 
 
-# app = Flask(__name__)
-
-vectorizer = load('./model/vectorizer.joblib')
-
-# model = tf.keras.model.load_model('./models/model.h5')
+model = load_model('./model/model.h5')
 
 
+@app.route('/')
+def mainPage():
+    return render_template('mainPage.html')
 
-# @app.route('/')
-# def mainPage():
-#     return render_template('mainPage.html')
-
-# @app.route('/detect',methods = ['POST'])
-# def detect():
-#     comment = request.headers.get('comment')
-#     vectorized_text = vectorizer([comment])
-#     prediction = model.predict(vectorized_text)
-#     return prediction
+@app.route('/detect',methods = ['POST'])
+def detect():
+    comment = request.headers.get('comment')
+    vectorized_text = vectorizer([comment])
+    prediction = model.predict(vectorized_text)
+    return {'result':processPrediction(prediction=prediction)}
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

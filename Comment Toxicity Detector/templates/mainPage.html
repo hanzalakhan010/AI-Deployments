@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comment Toxicity Detector</title>
 </head>
+<style>
+    * {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .ngood{
+        background-color: rgb(161, 161, 161);
+    }
+    p{
+        width: 300px;
+    }
+
+</style>
 <script>
     function sendComment() {
         let comment = document.getElementById('comment').value
         fetch('/detect', {
+            method: "POST",
             headers: {
                 comment
             }
@@ -17,6 +31,22 @@
             .then((data) => {
                 if (data) {
                     console.log(data)
+                    document.getElementById('result').innerHTML = ''
+                    Object.keys(data.result).map((ele) => {
+                        val = String(ele)
+                        val = val.replace('_', ' ').toUpperCase()
+                        if (data.result[ele]) {
+                            document.getElementById('result').innerHTML += `
+                            <p class = 'ngood'>${val} :  ${data.result[ele]}</p>
+                            `
+                        }
+                        else {
+                            document.getElementById('result').innerHTML += `
+                            <p>${val} :  ${data.result[ele]}</p>
+                            `
+                        }
+                    })
+
                 }
             })
     }
@@ -26,6 +56,7 @@
 <body>
     <input id='comment' placeholder="Comment">
     <button onclick="sendComment()">Detect</button>
+    <div id='result'></div>
 </body>
 
 </html>

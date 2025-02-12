@@ -2,3 +2,5 @@ env/
 model/
 *.png
 *.jpeg
+*.csv
+__pycache__/
