@@ -9,7 +9,7 @@ from joblib import load
 
 # app = Flask(__name__)
 
-vectorizer = load('./models/vectorizer.joblib')
+vectorizer = load('./model/vectorizer.joblib')
 
 # model = tf.keras.model.load_model('./models/model.h5')
 
